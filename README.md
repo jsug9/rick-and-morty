@@ -1,6 +1,6 @@
 # Rick & Morty App
 
-> In this capstone I put on practice my skills on React and Redux, along with JavaScript and SCSS.
+> This is an app that search characters of the TV Show "Rick & Morty" through the [GraphQl API](https://rickandmortyapi.com/graphql).
 
 ## Built With
 
