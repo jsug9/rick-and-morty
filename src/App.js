@@ -7,7 +7,7 @@ import Navbar from './Components/Navbar';
 import CharactersListContainer from './Pages/CharactersListContainer';
 import FavoritesContainer from './Pages/FavoritesContainer';
 
-const App = () => {
+const App = () => (
   <Router>
     <header>
       <Navbar />
@@ -16,7 +16,7 @@ const App = () => {
       <Route exact path="/" element={<CharactersListContainer />} />
       <Route path="/:favorites" element={<FavoritesContainer />} />
     </Routes>
-  </Router>;
-};
+  </Router>
+);
 
 export default App;
