@@ -11,7 +11,7 @@
 
 ## Live Demo
 
-- [GitHub Deploy](https://jsug9.github.io/capstone-3/).
+- [GitHub Deploy](https://jsug9.github.io/rick-and-morty/).
 
 ## Presentation
 
@@ -23,10 +23,10 @@ To get a local copy of the project, follow these steps:
 1. Open the terminal and navigate to the folder where you would like to put these files.
 2. Type the following commands into the terminal: 
  ```
- git clone https://github.com/jsug9/capstone-3
+ git clone https://github.com/jsug9/rick-and-morty
  ```
  ```
- cd capstone-3
+ cd rick-and-morty
  ```
 3. Install Dependencies
   - Required to run 
@@ -66,7 +66,7 @@ npm start
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/jsug9/capstone-3/issues).
+Feel free to check the [issues page](https://github.com/jsug9/rick-and-morty/issues).
 ## Show your support
 
 Give a ⭐️ if you like this project!
