@@ -1,25 +1,22 @@
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit
-          {' '}
-          <code>src/App.js</code>
-          {' '}
-          and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from 'react-router-dom';
+import Navbar from './Components/Navbar';
+import CharactersList from './Pages/CharactersList';
+import Favorites from './Pages/Favorites';
+
+const App = () => {
+  <Router>
+    <header>
+      <Navbar />
+    </header>
+    <Routes>
+      <Route exact path="/" element={<CharactersList />} />
+      <Route path="/:favorites" element={<Favorites />} />
+    </Routes>
+  </Router>;
+};
 
 export default App;
