@@ -4,8 +4,8 @@ import {
   Route,
 } from 'react-router-dom';
 import Navbar from './Components/Navbar';
-import CharactersList from './Pages/CharactersList';
-import Favorites from './Pages/Favorites';
+import CharactersListContainer from './Pages/CharactersListContainer';
+import FavoritesContainer from './Pages/FavoritesContainer';
 
 const App = () => {
   <Router>
@@ -13,8 +13,8 @@ const App = () => {
       <Navbar />
     </header>
     <Routes>
-      <Route exact path="/" element={<CharactersList />} />
-      <Route path="/:favorites" element={<Favorites />} />
+      <Route exact path="/" element={<CharactersListContainer />} />
+      <Route path="/:favorites" element={<FavoritesContainer />} />
     </Routes>
   </Router>;
 };
