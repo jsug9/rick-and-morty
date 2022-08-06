@@ -14,7 +14,7 @@ const App = () => (
     </header>
     <Routes>
       <Route exact path="/" element={<CharactersListContainer />} />
-      <Route path="/:favorites" element={<FavoritesContainer />} />
+      <Route path="/favorites" element={<FavoritesContainer />} />
     </Routes>
   </Router>
 );
