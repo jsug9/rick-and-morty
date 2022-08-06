@@ -8,12 +8,12 @@ import CharactersListContainer from './Pages/CharactersListContainer';
 import FavoritesContainer from './Pages/FavoritesContainer';
 
 const App = () => (
-  <Router>
+  <Router basename={process.env.PUBLIC_URL}>
     <header>
       <Navbar />
     </header>
     <Routes>
-      <Route exact path="/" element={<CharactersListContainer />} />
+      <Route path="/" element={<CharactersListContainer />} />
       <Route path="/favorites" element={<FavoritesContainer />} />
     </Routes>
   </Router>
