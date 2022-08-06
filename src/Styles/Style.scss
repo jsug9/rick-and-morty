@@ -78,6 +78,15 @@ link:active {
   text-decoration: underline;
 }
 
+.searchDiv {
+  display: flex;
+  input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid black;
+  }
+}
+
 // Characters-list
 .characters-list {
   display: flex;
