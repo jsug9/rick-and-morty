@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import logo from '../Assets/Logo.png';
 
 const Navbar = () => {
   const links = [
@@ -18,7 +19,7 @@ const Navbar = () => {
   return (
     <nav>
       <div className="rightNav">
-        <h1>Rick And Morty</h1>
+        <img src={logo} alt="logo" className="logo" />
       </div>
       <ul className="links">
         {links.map((link) => (
