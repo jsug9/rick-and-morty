@@ -50,12 +50,12 @@ let isLoading = false;
 
 const dispatchCharacters = (characters) => ({ type: GET_CHARACTERS, payload: characters });
 
-const getCharacters = () => {
+const getCharacters = () => async (dispatch) => {
   if (isLoading) return;
 
   const characters = initialState;
 
-  dispatchCharacters(characters);
+  dispatch(dispatchCharacters(characters));
   isLoading = true;
 };
 
