@@ -1,50 +1,22 @@
+// import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import CharacterItem from './CharacterItem';
 
-const CharactersList = () => {
-  const characters = [
-    {
-      id: 1,
-      name: 'Rick Sanchez',
-      image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
-      isFavorite: true,
-    },
-    {
-      id: 2,
-      name: 'Morty Smith',
-      image: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg',
-      isFavorite: true,
-    },
-    {
-      id: 3,
-      name: 'Summer Smith',
-      image: 'https://rickandmortyapi.com/api/character/avatar/3.jpeg',
-      isFavorite: false,
-    },
-    {
-      id: 4,
-      name: 'Beth Smith',
-      image: 'https://rickandmortyapi.com/api/character/avatar/4.jpeg',
-      isFavorite: false,
-    },
-    {
-      id: 5,
-      name: 'Jerry Smith',
-      image: 'https://rickandmortyapi.com/api/character/avatar/5.jpeg',
-      isFavorite: true,
-    },
-    {
-      id: 6,
-      name: 'Mr. Meeseeks',
-      image: 'https://rickandmortyapi.com/api/character/avatar/6.jpeg',
-      isFavorite: false,
-    },
-    {
-      id: 7,
-      name: 'Mr. Meeseeks',
-      image: 'https://rickandmortyapi.com/api/character/avatar/7.jpeg',
-      isFavorite: true,
-    },
-  ];
+const CharactersList = (props) => {
+  const { characters } = props;
+  // const [visibleCharacters, setVisibleCharacters] = useState(characters);
+
+  // useEffect(() => {
+  //   setVisibleCharacters(characters);
+  // }, [characters]);
+
+  // useEffect(() => {
+  //   const cleanSearchTerm = searchCharacter.toLowerCase().trim();
+  //   setVisibleCharacters(characters.filter((character) => {
+  //     const characterName = character.name.toLowerCase();
+  //     return characterName.includes(cleanSearchTerm);
+  //   }));
+  // }, [searchCharacter]);
 
   return (
     <div className="characters-list">
@@ -53,6 +25,15 @@ const CharactersList = () => {
       ))}
     </div>
   );
+};
+
+CharactersList.propTypes = {
+  characters: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number,
+    name: PropTypes.string,
+    image: PropTypes.string,
+    isFavorite: PropTypes.bool,
+  })).isRequired,
 };
 
 export default CharactersList;
