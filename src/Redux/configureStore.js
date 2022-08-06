@@ -2,7 +2,7 @@ import { combineReducers, applyMiddleware } from 'redux';
 import { configureStore } from '@reduxjs/toolkit';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
-import charactersReducer from './Characters/CharactersReducer';
+import charactersReducer from './characters/CharactersReducer';
 
 const rootReducer = combineReducers({
   characters: charactersReducer,

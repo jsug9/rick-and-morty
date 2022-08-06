@@ -1,5 +1,3 @@
-import { fetchCharacters } from '../../API/CovidAPI';
-
 const GET_CHARACTERS = 'Characters/GET_CHARACTERS';
 const GET_FAVORITE_CHARACTERS = 'Characters/GET_FAVORITE_CHARACTERS';
 
@@ -50,16 +48,16 @@ const initialState = [
 
 let isLoading = false;
 
+const dispatchCharacters = (characters) => ({ type: GET_CHARACTERS, payload: characters });
+
 const getCharacters = () => {
   if (isLoading) return;
 
-  characters = initialState;
+  const characters = initialState;
 
-  dispatch(dispatchCharacters(characters));
+  dispatchCharacters(characters);
   isLoading = true;
 };
-
-const dispatchCharacters = (characters) => ({ type: GET_CHARACTERS, payload: characters });
 
 const charactersReducer = (state = initialState, action) => {
   switch (action.type) {
