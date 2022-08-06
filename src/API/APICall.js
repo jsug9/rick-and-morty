@@ -6,9 +6,11 @@ const getCharacters = (characters) => gql`
       results {
         id
         name
-        image
         status
         species
+        type
+        gender
+        image
       }
     }
   }
