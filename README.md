@@ -55,7 +55,7 @@ For the Live Server  || http://localhost:8080/
 npm start
 ```
 
-## Authors
+## Author
 
 👤 **Augusto Galindo**
 

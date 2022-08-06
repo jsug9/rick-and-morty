@@ -29,10 +29,13 @@ const CharactersList = (props) => {
 
 CharactersList.propTypes = {
   characters: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number,
+    id: PropTypes.string,
     name: PropTypes.string,
+    status: PropTypes.string,
+    species: PropTypes.string,
+    type: PropTypes.string,
+    gender: PropTypes.string,
     image: PropTypes.string,
-    isFavorite: PropTypes.bool,
   })).isRequired,
   searchCharacter: PropTypes.string.isRequired,
 };
