@@ -1,9 +1,10 @@
 // import { useSelector, useDispatch } from 'react-redux';
 import React, { useState } from 'react';
 // import { getCharacters } from '../Redux/characters/CharactersReducer';
-import { useQuery, gql } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import CharactersList from '../Components/CharactersList';
 import SearchItem from '../Components/SearchItem';
+import getCharacters from '../API/APICall';
 
 const CharactersListContainer = () => {
   const [searchCharacter, setSearchCharacter] = useState('');
@@ -12,21 +13,7 @@ const CharactersListContainer = () => {
     setSearchCharacter(e.target.value);
   };
 
-  const GET_CHARACTERS = gql`
-  query Character($filter: FilterCharacter = { name: "${searchCharacter}" }) {
-    characters(filter: $filter) {
-      results {
-        id
-        name
-        image
-        status
-        species
-      }
-    }
-  }
-  `;
-
-  const { loading, error, data } = useQuery(GET_CHARACTERS, {
+  const { loading, error, data } = useQuery(getCharacters(searchCharacter), {
     variables: {
       filter: {
         name: searchCharacter,
