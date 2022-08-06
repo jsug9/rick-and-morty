@@ -48,14 +48,21 @@ const initialState = [
 
 let isLoading = false;
 
-const dispatchCharacters = (characters) => ({ type: GET_CHARACTERS, payload: characters });
+const dispatchCharacters = (characters, type) => ({ type, payload: characters });
 
 const getCharacters = () => async (dispatch) => {
   if (isLoading) return;
 
   const characters = initialState;
 
-  dispatch(dispatchCharacters(characters));
+  dispatch(dispatchCharacters(characters), GET_CHARACTERS);
+  isLoading = true;
+};
+
+const getFavorites = () => async (dispatch) => {
+  const characters = initialState.filter((character) => character.isFavorite);
+
+  dispatch(dispatchCharacters(characters), GET_FAVORITE_CHARACTERS);
   isLoading = true;
 };
 
@@ -72,5 +79,5 @@ const charactersReducer = (state = initialState, action) => {
   }
 };
 
-export { GET_CHARACTERS, getCharacters };
+export { GET_CHARACTERS, getCharacters, getFavorites };
 export default charactersReducer;

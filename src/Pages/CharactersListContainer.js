@@ -7,6 +7,7 @@ import SearchItem from '../Components/SearchItem';
 const CharactersListContainer = () => {
   const dispatch = useDispatch();
   const state = useSelector((state) => state.characters);
+
   useEffect(() => {
     dispatch(getCharacters());
   }, []);
