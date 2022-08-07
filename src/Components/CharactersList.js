@@ -21,7 +21,7 @@ const CharactersList = (props) => {
   return (
     <div className="characters-list">
       {visibleCharacters?.map((character) => (
-        <CharacterItem key={character.id} name={character.name} image={character.image} />
+        <CharacterItem key={character.id} character={character} />
       ))}
     </div>
   );
