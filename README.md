@@ -13,10 +13,6 @@
 
 - Check this [link](https://pure-journey-97070.herokuapp.com).
 
-## Presentation
-
-- To see the presentation in a video [click here](https://www.loom.com/share/2ec7c8700eb9424ca19512f292651b16).
-
 ## Getting Started
 
 To get a local copy of the project, follow these steps: 
