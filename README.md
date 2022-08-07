@@ -55,7 +55,7 @@ For the Live Server  || http://localhost:8080/
 npm start
 ```
 
-## Authors
+## Author
 
 👤 **Augusto Galindo**
 
@@ -70,11 +70,6 @@ Feel free to check the [issues page](https://github.com/jsug9/rick-and-morty/iss
 ## Show your support
 
 Give a ⭐️ if you like this project!
-
-## Acknowledgments
-
-- Original design idea by [Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio).
-- Thanks to my peers who are always there to offer support. 
 
 ## 📝 License
 
