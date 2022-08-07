@@ -6,17 +6,10 @@ const REMOVE_FAVORITE_CHARACTER = 'Characters/REMOVE_FAVORITE_CHARACTER';
 
 const initialState = loadState() !== undefined ? loadState().characters : [];
 
-let isLoading = false;
-
 const getFavorites = () => async (dispatch) => {
-  if (isLoading) return;
-  const characters = initialState;
-
   dispatch({
     type: GET_FAVORITE_CHARACTERS,
-    payload: characters,
   });
-  isLoading = true;
 };
 
 const addFavorite = (character) => async (dispatch) => {
