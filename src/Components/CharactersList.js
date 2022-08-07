@@ -36,6 +36,7 @@ CharactersList.propTypes = {
     type: PropTypes.string,
     gender: PropTypes.string,
     image: PropTypes.string,
+    isFavorite: PropTypes.bool,
   })).isRequired,
   searchCharacter: PropTypes.string.isRequired,
 };
