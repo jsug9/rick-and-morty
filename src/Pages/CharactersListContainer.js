@@ -1,6 +1,4 @@
-// import { useSelector, useDispatch } from 'react-redux';
 import React, { useState } from 'react';
-// import { getCharacters } from '../Redux/characters/CharactersReducer';
 import { useQuery } from '@apollo/client';
 import CharactersList from '../Components/CharactersList';
 import SearchItem from '../Components/SearchItem';
