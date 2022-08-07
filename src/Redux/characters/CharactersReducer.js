@@ -17,13 +17,13 @@ const getFavorites = () => async (dispatch) => {
 };
 
 const addFavorite = (character) => async (dispatch) => {
-  const characters = [...initialState, character];
-
   dispatch({
     type: ADD_FAVORITE_CHARACTER,
-    payload: characters,
+    payload: character,
   });
 };
+
+const characterIndex = (state, id) => state.findIndex((object) => (object.id === id));
 
 const charactersReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -31,7 +31,9 @@ const charactersReducer = (state = initialState, action) => {
       return state;
 
     case ADD_FAVORITE_CHARACTER:
-      console.log(action.payload);
+      if (characterIndex(state, action.payload.id) !== -1) {
+        return state;
+      }
       return [...state, action.payload];
 
     default:

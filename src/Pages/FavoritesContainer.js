@@ -19,7 +19,7 @@ const FavoritesContainer = () => {
   };
 
   const renderCharacters = () => {
-    if (characters.length === 0) return <p>No Favorites Added</p>;
+    if (characters?.length === 0) return <p>No Favorites Added</p>;
     return (
       <CharactersList characters={characters} searchCharacter={searchCharacter} />
     );

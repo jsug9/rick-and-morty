@@ -10,7 +10,7 @@ const CharacterDetailsContainer = () => {
   const { character } = location.state;
 
   const handleClick = () => {
-    addFavorite(character)(dispatch);
+    dispatch(addFavorite(character));
   };
 
   const type = () => (character.type ? character.type : 'No information');
