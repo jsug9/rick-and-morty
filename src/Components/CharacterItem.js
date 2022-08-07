@@ -1,18 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const characterItem = (props) => {
   const { character } = props;
 
   return (
-    <NavLink
-      to={`/${character.id}`}
+    <Link
+      to={{
+        pathname: `/${character.id}`,
+        state: character,
+      }}
       className="character-item"
     >
       <img src={character.image} alt="character" className="item-image" />
       <h3>{character.name}</h3>
-    </NavLink>
+    </Link>
   );
 };
 
