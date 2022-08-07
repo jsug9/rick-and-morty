@@ -14,6 +14,11 @@ const Navbar = () => {
       path: '/favorites',
       text: 'Favorites',
     },
+    {
+      id: 3,
+      path: '/nicknames',
+      text: 'Nicknames',
+    },
   ];
 
   return (
