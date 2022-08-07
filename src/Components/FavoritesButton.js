@@ -1,14 +1,23 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { addFavorite } from '../Redux/characters/CharactersReducer';
+import { addFavorite, removeFavorite } from '../Redux/characters/CharactersReducer';
 
 const FavoritesButton = (props) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { character } = props;
 
   const handleClick = () => {
-    dispatch(addFavorite(character));
+    if (character.isFavorite) {
+      dispatch(removeFavorite(character));
+      navigate(
+        '/favorites',
+      );
+    } else {
+      dispatch(addFavorite(character));
+    }
   };
 
   const text = character.isFavorite ? 'Remove from favorites' : 'Add to favorites';
