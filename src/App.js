@@ -11,15 +11,7 @@ import CharacterDetailsContainer from './Pages/CharacterDetailsContainer';
 import ListNicknames from './Pages/ListNicknames';
 import client from './API/ApolloClient';
 
-const nicknames = [
-  'Frank',
-  'Charlie',
-  'Dave',
-  'Bobby',
-  'Bob',
-  'Eve',
-  'Alice',
-];
+const nicknames = ['Triviño TI', 'Homer Dev', ' ', ' Ragnar Front', 'Loki UX'];
 
 const App = () => (
   <ApolloProvider client={client}>
