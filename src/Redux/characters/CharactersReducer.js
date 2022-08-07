@@ -5,13 +5,14 @@ const initialState = [];
 
 let isLoading = false;
 
-const dispatchCharacters = (characters, type) => ({ type, payload: characters });
-
 const getFavorites = () => async (dispatch) => {
   if (isLoading) return;
   const characters = initialState;
 
-  dispatch(dispatchCharacters(characters), GET_FAVORITE_CHARACTERS);
+  dispatch({
+    type: GET_FAVORITE_CHARACTERS,
+    payload: characters,
+  });
   isLoading = true;
 };
 
@@ -27,9 +28,10 @@ const addFavorite = (character) => async (dispatch) => {
 const charactersReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_FAVORITE_CHARACTERS:
-      return action.payload;
+      return state;
 
     case ADD_FAVORITE_CHARACTER:
+      console.log(action.payload);
       return [...state, action.payload];
 
     default:
@@ -41,4 +43,5 @@ export {
   getFavorites,
   addFavorite,
 };
+
 export default charactersReducer;
