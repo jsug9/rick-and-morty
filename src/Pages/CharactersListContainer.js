@@ -25,7 +25,7 @@ const CharactersListContainer = () => {
 
   const renderCharacters = () => {
     if (loading) return <p>Loading...</p>;
-    if (error) return <p>Error :(</p>;
+    if (error) return <p>Error</p>;
     return (
       <CharactersList characters={characters} searchCharacter={searchCharacter} />
     );
