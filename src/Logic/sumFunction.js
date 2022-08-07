@@ -6,7 +6,7 @@ function sum(arr) {
     return a + sumB;
   }, 0);
 
-  return result;
+  return (callback) => callback(result);
 }
 
-console.log(sum(test));
+sum(test)((result) => console.log(result));
