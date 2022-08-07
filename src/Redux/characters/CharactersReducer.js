@@ -1,5 +1,6 @@
 const GET_FAVORITE_CHARACTERS = 'Characters/GET_FAVORITE_CHARACTERS';
 const ADD_FAVORITE_CHARACTER = 'Characters/ADD_FAVORITE_CHARACTER';
+const REMOVE_FAVORITE_CHARACTER = 'Characters/REMOVE_FAVORITE_CHARACTER';
 
 const initialState = [];
 
@@ -17,13 +18,24 @@ const getFavorites = () => async (dispatch) => {
 };
 
 const addFavorite = (character) => async (dispatch) => {
-  const characters = [...initialState, character];
-
+  const favoriteCharacter = character;
+  favoriteCharacter.isFavorite = true;
   dispatch({
     type: ADD_FAVORITE_CHARACTER,
-    payload: characters,
+    payload: favoriteCharacter,
   });
 };
+
+const removeFavorite = (character) => async (dispatch) => {
+  const favoriteCharacter = character;
+  favoriteCharacter.isFavorite = false;
+  dispatch({
+    type: REMOVE_FAVORITE_CHARACTER,
+    payload: favoriteCharacter,
+  });
+};
+
+const characterIndex = (state, id) => state.findIndex((object) => (object.id === id));
 
 const charactersReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -31,8 +43,17 @@ const charactersReducer = (state = initialState, action) => {
       return state;
 
     case ADD_FAVORITE_CHARACTER:
-      console.log(action.payload);
+      if (characterIndex(state, action.payload.id) !== -1) {
+        return state;
+      }
       return [...state, action.payload];
+
+    case REMOVE_FAVORITE_CHARACTER:
+      const index = characterIndex(state, action.payload.id); // eslint-disable-line
+      if (characterIndex(state, action.payload.id) === -1) {
+        return state;
+      }
+      return [...state.slice(0, index), ...state.slice(index + 1)];
 
     default:
       return state;
@@ -42,6 +63,7 @@ const charactersReducer = (state = initialState, action) => {
 export {
   getFavorites,
   addFavorite,
+  removeFavorite,
 };
 
 export default charactersReducer;

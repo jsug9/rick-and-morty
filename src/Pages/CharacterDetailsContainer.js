@@ -1,17 +1,11 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
-import { addFavorite } from '../Redux/characters/CharactersReducer';
+import FavoritesButton from '../Components/FavoritesButton';
 
 const CharacterDetailsContainer = () => {
   const location = useLocation();
-  const dispatch = useDispatch();
 
   const { character } = location.state;
-
-  const handleClick = () => {
-    addFavorite(character)(dispatch);
-  };
 
   const type = () => (character.type ? character.type : 'No information');
 
@@ -51,13 +45,7 @@ const CharacterDetailsContainer = () => {
           </p>
         </div>
       </div>
-      <button
-        type="button"
-        className="favorites-button"
-        onClick={handleClick}
-      >
-        Add to Favorites
-      </button>
+      <FavoritesButton character={character} />
     </div>
   );
 };
