@@ -1,15 +1,12 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 
 const CharacterDetailsContainer = () => {
-  const character = {
-    id: '1',
-    name: 'Rick Sanchez',
-    status: 'Alive',
-    species: 'Human',
-    type: 'Homo Sapiens',
-    gender: 'Male',
-    image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
-  };
+  const location = useLocation();
+
+  const { character } = location.state;
+
+  const type = () => (character.type ? character.type : 'No information');
 
   return (
     <div className="character-details-container">
@@ -35,7 +32,7 @@ const CharacterDetailsContainer = () => {
             Type:
             {' '}
             <span>
-              {character.type}
+              {type()}
             </span>
           </p>
           <p>

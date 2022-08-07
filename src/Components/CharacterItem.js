@@ -1,21 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const characterItem = (props) => {
   const { character } = props;
 
+  const navigate = useNavigate();
+
+  const redirect = () => {
+    navigate(
+      `/${character.id}`,
+      { state: { character } },
+    );
+  };
+
   return (
-    <Link
-      to={{
-        pathname: `/${character.id}`,
-        state: character,
-      }}
+    <button
+      type="button"
+      onClick={redirect}
       className="character-item"
     >
       <img src={character.image} alt="character" className="item-image" />
       <h3>{character.name}</h3>
-    </Link>
+    </button>
   );
 };
 
