@@ -1,6 +1,5 @@
 {
   "name": "rick-and-morty",
-  "homepage": "https://jsug9.github.io/rick-and-morty",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
