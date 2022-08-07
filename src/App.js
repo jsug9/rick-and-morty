@@ -7,6 +7,7 @@ import { ApolloProvider } from '@apollo/client';
 import Navbar from './Components/Navbar';
 import CharactersListContainer from './Pages/CharactersListContainer';
 import FavoritesContainer from './Pages/FavoritesContainer';
+import CharacterDetailsContainer from './Pages/CharacterDetailsContainer';
 import client from './API/ApolloClient';
 
 const App = () => (
@@ -16,7 +17,8 @@ const App = () => (
         <Navbar />
       </header>
       <Routes>
-        <Route path="/" element={<CharactersListContainer />} />
+        <Route exact path="/" element={<CharactersListContainer />} />
+        <Route path="/:character" element={<CharacterDetailsContainer />} />
         <Route path="/favorites" element={<FavoritesContainer />} />
       </Routes>
     </Router>
