@@ -1,8 +1,10 @@
+import { loadState } from '../localStorage';
+
 const GET_FAVORITE_CHARACTERS = 'Characters/GET_FAVORITE_CHARACTERS';
 const ADD_FAVORITE_CHARACTER = 'Characters/ADD_FAVORITE_CHARACTER';
 const REMOVE_FAVORITE_CHARACTER = 'Characters/REMOVE_FAVORITE_CHARACTER';
 
-const initialState = [];
+const initialState = loadState() !== undefined ? loadState().characters : [];
 
 let isLoading = false;
 
@@ -18,7 +20,7 @@ const getFavorites = () => async (dispatch) => {
 };
 
 const addFavorite = (character) => async (dispatch) => {
-  const favoriteCharacter = character;
+  const favoriteCharacter = { ...character, isFavorite: true };
   favoriteCharacter.isFavorite = true;
   dispatch({
     type: ADD_FAVORITE_CHARACTER,
