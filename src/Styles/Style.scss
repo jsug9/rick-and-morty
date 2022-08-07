@@ -112,9 +112,15 @@ link:active {
   width: 100%;
   border: 1px solid black;
   color: black;
+  font-size: 1rem;
   background: white;
   text-decoration: none;
   padding: 0;
+}
+
+.character-item:hover {
+  background: #7aaaf9;
+  color: white;
 }
 
 .item-image {
