@@ -11,7 +11,7 @@
 
 ## Live Demo
 
-- [GitHub Deploy](https://jsug9.github.io/rick-and-morty/).
+- Check this [link](https://pure-journey-97070.herokuapp.com).
 
 ## Presentation
 
